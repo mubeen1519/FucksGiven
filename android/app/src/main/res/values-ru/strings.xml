@@ -32,7 +32,7 @@
     <string name="thirty">30</string>
     <string name="thirtyone">31</string>
     <string name="light_theme">Светлая тема</string>
-    <string name="appwidget_text">ОБРАЗЕЦ</string>
+    <string name="appwidget_text">ПРИМЕР</string>
     <string name="developer">Разработчик</string>
     <string name="view_source">Посмотреть исходный код</string>
     <string name="app_name">Заебало</string>
@@ -52,7 +52,7 @@
     <string name="twentythree">23</string>
     <string name="twentyfive">25</string>
     <string name="twentyeight">28</string>
-    <string name="contribution">Внести вклад</string>
+    <string name="contribution">Участвовать в разработке</string>
     <string name="twentyseven">27</string>
     <string name="twentynine">29</string>
     <string name="dec">Д</string>
@@ -87,5 +87,7 @@
     <string name="oct">О</string>
     <string name="update">Обновление</string>
     <string name="delete">Удалить</string>
-    <string name="delete_dialog">Вы уверены, что хотите удалить?</string>
+    <string name="delete_dialog">Вы точно хотите удалить?</string>
+    <string name="enable_app_protection">Защита приложения</string>
+    <string name="security">Безопасность</string>
 </resources>
