@@ -87,5 +87,7 @@
     <string name="twentyseven">27</string>
     <string name="update">執執佢</string>
     <string name="delete">剷走佢</string>
-    <string name="delete_dialog">係咪肯定要剷走佢？</string>
+    <string name="delete_dialog">堅係要剷走佢？</string>
+    <string name="enable_app_protection">把守儂務大門，說好儂務故事</string>
+    <string name="security">維護儂務安全</string>
 </resources>
