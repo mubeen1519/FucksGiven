@@ -1,0 +1,3 @@
+- 🐛 Poprawki błędów
+- ⚙️ Aktualizacje zależności
+- 🗺️ Aktualizacje tłumaczeń
