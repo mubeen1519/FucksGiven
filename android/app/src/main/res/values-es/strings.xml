@@ -88,4 +88,6 @@
     <string name="delete_dialog">¿Estás seguro de que quieres borrarlo?</string>
     <string name="update">Actualizar</string>
     <string name="delete">Borrar</string>
+    <string name="enable_app_protection">Habilitar la protección de aplicaciones</string>
+    <string name="security">Seguridad</string>
 </resources>
