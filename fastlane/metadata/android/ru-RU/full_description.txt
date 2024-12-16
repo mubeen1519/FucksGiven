@@ -1,0 +1,7 @@
+Fucks Given позволяет вам отслеживать вещи, которые вы заботите. Каждый раз, когда происходит что-то, о чем вы беспокоитесь без необходимости, запишите это одним касанием. Приложение создает диаграмму того, сколько раз вы беспокоились, чтобы вы могли работать над тем, чтобы не беспокоиться вовсе.
+
+Fucks Given позволяет вам создавать резервные копии ваших данных и имеет красивый темный режим, который может включаться автоматически, следуя системной теме. Оно даже работает на ваших смарт-часах.
+
+Вебстраница: <a href="https://www.crazymarvin.com/fucks-given">https://www.crazymarvin.com/fucks-given</a>  
+Перевести Fucks Given: <a href="https://hosted.weblate.org/engage/fucksgiven/">https://hosted.weblate.org/engage/fucks-given/</a>  
+Исходный код на GitHub: <a href="https://github.com/Crazy-Marvin/FucksGiven">https://github.com/Crazy-Marvin/FucksGiven</a>
