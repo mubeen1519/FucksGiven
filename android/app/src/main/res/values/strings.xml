@@ -88,7 +88,7 @@
     <string name="developer">Developer</string>
     <string name="mubeen" translatable="false">Mubeen Ali</string>
     <string name="contribution">Contribute</string>
-    <string name="translate" translatable="false">Translate</string>
+    <string name="translate">Translate</string>
     <string name="report">Report a problem</string>
     <string name="view_source">View Source</string>
     <string name="open_source">Open-source Licenses</string>
@@ -99,5 +99,4 @@
     <string name="mit_license" translatable="false">MIT License</string>
     <string name="android_jetpack" translatable="false">Android Jetpack</string>
     <string name="apache_license" translatable="false">Apache License 2.0</string>
-
 </resources>
