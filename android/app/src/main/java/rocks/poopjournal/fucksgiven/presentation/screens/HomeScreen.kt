@@ -84,7 +84,7 @@ fun HomeScreen(
         if (!storagePermission.status.isGranted && storagePermission.status.shouldShowRationale) {
             // Show rationale if needed
         } else {
-            requestPermissionLauncher.launch(Manifest.permission.CAMERA)
+            requestPermissionLauncher.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE)
         }
 
     }

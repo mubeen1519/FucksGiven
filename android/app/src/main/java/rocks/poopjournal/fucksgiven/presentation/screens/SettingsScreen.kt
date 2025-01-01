@@ -56,16 +56,31 @@ import rocks.poopjournal.fucksgiven.presentation.viewmodel.SettingsViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SettingScreen(navController: NavHostController, viewModel: SettingsViewModel, context: Context) {
+fun SettingScreen(
+    navController: NavHostController,
+    viewModel: SettingsViewModel,
+    context: Context
+) {
     var showDialog by remember { mutableStateOf(false) }
     val toastMessage = stringResource(id = R.string.backup_success)
-    var isPasswordProtectionEnabled by remember { mutableStateOf(getPasswordProtectionEnabled(context)) }
+    var isPasswordProtectionEnabled by remember {
+        mutableStateOf(
+            getPasswordProtectionEnabled(
+                context
+            )
+        )
+    }
     var showPasswordDialog by remember { mutableStateOf(false) }
 
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(text = stringResource(id = R.string.settings), style = MaterialTheme.typography.titleLarge) },
+                title = {
+                    Text(
+                        text = stringResource(id = R.string.settings),
+                        style = MaterialTheme.typography.titleLarge
+                    )
+                },
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(
@@ -105,9 +120,12 @@ fun SettingScreen(navController: NavHostController, viewModel: SettingsViewModel
                     .fillMaxWidth()
                     .padding(11.dp)
                     .clickable { showDialog = true }) {
-                    Text(text = stringResource(id = R.string.apperance), style = MaterialTheme.typography.bodyLarge)
                     Text(
-                        text = viewModel.themeSetting.theme.nameTheme,
+                        text = stringResource(id = R.string.apperance),
+                        style = MaterialTheme.typography.bodyLarge
+                    )
+                    Text(
+                        text = stringResource(id = viewModel.themeSetting.theme.getStringResId()),
                         style = MaterialTheme.typography.labelSmall,
                         fontWeight = FontWeight.Light
                     )
@@ -153,7 +171,7 @@ fun SettingScreen(navController: NavHostController, viewModel: SettingsViewModel
 
                             if (enabled) {
                                 showPasswordDialog = true
-                            } else{
+                            } else {
                                 isPasswordProtectionEnabled = false
                                 setPasswordProtectionEnabled(context, false)
                             }
@@ -206,7 +224,10 @@ fun SettingScreen(navController: NavHostController, viewModel: SettingsViewModel
                         contentDescription = stringResource(id = R.string.backup)
                     )
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text(text = stringResource(id = R.string.backup), style = MaterialTheme.typography.bodyLarge)
+                    Text(
+                        text = stringResource(id = R.string.backup),
+                        style = MaterialTheme.typography.bodyLarge
+                    )
                 }
                 Divider(
                     thickness = 0.8.dp,
@@ -228,7 +249,10 @@ fun SettingScreen(navController: NavHostController, viewModel: SettingsViewModel
                         contentDescription = stringResource(id = R.string.restore)
                     )
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text(text = stringResource(id = R.string.restore), style = MaterialTheme.typography.bodyLarge)
+                    Text(
+                        text = stringResource(id = R.string.restore),
+                        style = MaterialTheme.typography.bodyLarge
+                    )
                 }
             }
             Column {
@@ -262,7 +286,10 @@ fun SettingScreen(navController: NavHostController, viewModel: SettingsViewModel
                         contentDescription = "about"
                     )
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text(text = stringResource(id = R.string.about), style = MaterialTheme.typography.bodyLarge)
+                    Text(
+                        text = stringResource(id = R.string.about),
+                        style = MaterialTheme.typography.bodyLarge
+                    )
                 }
             }
         }
@@ -298,40 +325,40 @@ fun SetPasswordScreen(context: Context, onPasswordSet: () -> Unit, onDismissRequ
     var password by remember { mutableStateOf("") }
     var confirmPassword by remember { mutableStateOf("") }
 
-    AlertDialog(onDismissRequest = onDismissRequest){
-    Column(
-        modifier = Modifier.clipToBounds(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        TextField(
-            value = password,
-            onValueChange = { password = it },
-            label = { Text("Enter Password") },
-            modifier = Modifier.padding(16.dp),
-            visualTransformation = PasswordVisualTransformation()
-        )
-        TextField(
-            value = confirmPassword,
-            onValueChange = { confirmPassword = it },
-            label = { Text("Confirm Password") },
-            modifier = Modifier.padding(16.dp),
-            visualTransformation = PasswordVisualTransformation()
-        )
-        Button(
-            onClick = {
-            if (password == confirmPassword && password.isNotBlank()) {
-                setPasswordProtectionEnabled(context, true)
-                savePassword(context, password)
-                onPasswordSet()
-            } else {
-                password = ""
-                confirmPassword = ""
-                Toast.makeText(context, "Password didn't match", Toast.LENGTH_SHORT ).show()
+    AlertDialog(onDismissRequest = onDismissRequest) {
+        Column(
+            modifier = Modifier.clipToBounds(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            TextField(
+                value = password,
+                onValueChange = { password = it },
+                label = { Text("Enter Password") },
+                modifier = Modifier.padding(16.dp),
+                visualTransformation = PasswordVisualTransformation()
+            )
+            TextField(
+                value = confirmPassword,
+                onValueChange = { confirmPassword = it },
+                label = { Text("Confirm Password") },
+                modifier = Modifier.padding(16.dp),
+                visualTransformation = PasswordVisualTransformation()
+            )
+            Button(
+                onClick = {
+                    if (password == confirmPassword && password.isNotBlank()) {
+                        setPasswordProtectionEnabled(context, true)
+                        savePassword(context, password)
+                        onPasswordSet()
+                    } else {
+                        password = ""
+                        confirmPassword = ""
+                        Toast.makeText(context, "Password didn't match", Toast.LENGTH_SHORT).show()
+                    }
+                }) {
+                Text(text = "Set Password", color = Color.White)
             }
-        }) {
-            Text(text = "Set Password", color = Color.White)
-        }
         }
     }
 }

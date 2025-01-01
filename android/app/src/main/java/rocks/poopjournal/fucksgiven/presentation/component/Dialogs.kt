@@ -83,7 +83,9 @@ fun AddDialog(
         ) {
             Text(text = stringResource(id = R.string.cancel))
         }
-    }, containerColor = MaterialTheme.colorScheme.background, text = {
+    },
+        containerColor = MaterialTheme.colorScheme.background,
+        text = {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
